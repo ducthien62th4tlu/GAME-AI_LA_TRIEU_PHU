@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
+[System.Serializable]
+
 public class UIManager : MonoBehaviour
 {
     public static UIManager Ins;
@@ -10,17 +13,17 @@ public class UIManager : MonoBehaviour
     public Text questionText;
     public Dialog dialog;
     public AnswerButton[] answerButtons;
+    public Sprite rightAnswer;
+    public Sprite wrongAnswer;
+    public Sprite defaulAnswer;
+    public float colorChangeDelay = 0.5f;
 
     public void Awake()
     {
         MakeSingleton();
 
     }
-
-    private void Start()
-    {
-       ShuffleAnswwer();
-    }
+    
     public void SetTimeText(string content)
     {
         if(timeText)
@@ -53,6 +56,50 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    public void ChangeRightAnswer(AnswerButton answerButton)
+    {
+        answerButton.GetComponent<Image>().sprite = rightAnswer;
+        StartCoroutine(ChangeColorWithDelay(answerButton, rightAnswer, colorChangeDelay));
+    }
+
+    public void ChaneWrongAnswer(AnswerButton answerButton)
+    {
+        answerButton.GetComponent<Image>().sprite = wrongAnswer;
+    }
+    //public void ResetImage(AnswerButton answerButton)
+    //{
+    //    if (answerButton != null)
+    //    {
+    //        answerButton.GetComponent<Image>().sprite = defaulAnswer;
+    //    }
+
+    //}
+    public void ResetButtonImage(AnswerButton answerButton)
+    {
+        if (answerButton != null)
+        {
+            answerButton.GetComponent<Image>().sprite = defaulAnswer;
+        }
+    }
+
+    public void ResetAllButtonImages()
+    {
+        foreach (var button in answerButtons)
+        {
+            ResetButtonImage(button);
+            StartCoroutine(ResetColorWithDelay(button, defaulAnswer, colorChangeDelay));
+        }
+    }
+    IEnumerator ChangeColorWithDelay(AnswerButton answerButton, Sprite newSprite, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        answerButton.GetComponent<Image>().sprite = newSprite;
+    }
+    IEnumerator ResetColorWithDelay(AnswerButton answerButton, Sprite newSprite, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        answerButton.GetComponent<Image>().sprite = newSprite;
+    }
     public void MakeSingleton()
     {
         if ( Ins == null)

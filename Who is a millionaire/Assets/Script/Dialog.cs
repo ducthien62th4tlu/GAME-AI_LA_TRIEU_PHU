@@ -11,7 +11,7 @@ public class Dialog : MonoBehaviour
         gameObject.SetActive(isShow);
     }
 
-    public void SetDialogCOntent(string content)
+    public void SetDialogContent(string content)
     {
         if(dialogContentText)
             dialogContentText.text = content;  

@@ -18,4 +18,9 @@ public class SceneManager : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void Replay()
+    {
+        Application.LoadLevel("Scene3");
+    }
 }
