@@ -14,7 +14,6 @@ public class AnswerButton : MonoBehaviour
     {
         if(answerText)
            answerText.text = content;
-       
     }
 
     

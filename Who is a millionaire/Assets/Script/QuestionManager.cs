@@ -13,9 +13,6 @@ public class QuestionManager : MonoBehaviour
     public void Awake()
     {
         m_questions = questions.ToList();
-
-        //Debug.Log(GetRandomQuestion().question);
-
         MakeSingleton();
     }
 

@@ -9,7 +9,7 @@ public class GameController : MonoBehaviour
     float m_curTime;
     int m_rightCount;
 
-    public AnswerButton correctAnswerButton;
+    public AnswerButton rightAnswerButton;
     public AnswerButton wrongAnswerButton;
     public AnswerButton defaulAnswerButton;
 
@@ -36,7 +36,7 @@ public class GameController : MonoBehaviour
     public void CreateQuestion()
     {
         QuestionData qs = QuestionManager.Ins.GetRandomQuestion();
-        UIManager.Ins.ResetAllButtonImages();
+        
         if (qs != null)
         {
             UIManager.Ins.SetQuestionText(qs.question);
@@ -55,7 +55,7 @@ public class GameController : MonoBehaviour
                     if(string.Compare(temp[i].tag,"RightAnswer") == 0)
                     {
                         temp[i].SetAnswerText(qs.rightAnswer);
-                        correctAnswerButton = temp[i];
+                        rightAnswerButton = temp[i];
                     }
                     else
                     {
@@ -69,41 +69,48 @@ public class GameController : MonoBehaviour
             }
         }
     }
-    void CheckRightAnswerEvent(AnswerButton answerButton)
+    public void CheckRightAnswerEvent(AnswerButton answerButton)
     {
+        StartCoroutine(DelayedCheckRightAnswer(answerButton));
+    }
+    IEnumerator DelayedCheckRightAnswer(AnswerButton answerButton)
+    {
+        yield return new WaitForSeconds(2);
         if (answerButton.CompareTag("RightAnswer"))
         {
             m_curTime = timePerQuestion;
             UIManager.Ins.SetTimeText("00 : " + m_curTime);
             m_rightCount++;
-            UIManager.Ins.ChangeRightAnswer(correctAnswerButton);
+            UIManager.Ins.ChangeRightAnswer(answerButton);
             if (m_rightCount == QuestionManager.Ins.questions.Length)
             {
+                yield return new WaitForSeconds(2);
                 UIManager.Ins.dialog.SetDialogContent(" YOU WIN !");
                 UIManager.Ins.dialog.Show(true);
                 StopAllCoroutines();
                 AudioController.Ins.PlayWinSound();
-                
+
             }
             else
             {
-                UIManager.Ins.ResetAllButtonImages();
+                yield return new WaitForSeconds(1);
                 CreateQuestion();
+                UIManager.Ins.ChangeDefaulAnswer(answerButton);
                 AudioController.Ins.PlayRightSound();
                 Debug.Log("Ban da tra loi dung");
             }
         }
         else
         {
+            yield return new WaitForSeconds(1);
             UIManager.Ins.ChaneWrongAnswer(answerButton);
             UIManager.Ins.dialog.SetDialogContent(" YOU LOSE !");
             UIManager.Ins.dialog.Show(true);
-            Debug.Log("Ban da tra loi sai, Tro choi ket thuc");
+            AudioController.Ins.PlayWrongtSound();
             AudioController.Ins.PlayLoseSound();
         }
     }
-
-    IEnumerator TimeCoutingDown()
+        IEnumerator TimeCoutingDown()
     {
         yield return new WaitForSeconds(1);
         if(m_curTime > 0)
@@ -121,6 +128,9 @@ public class GameController : MonoBehaviour
         }
         
     }
+
+
+    
     public void ExitGame()
     {
         Application.Quit();
@@ -144,5 +154,14 @@ public class GameController : MonoBehaviour
     {
         AudioController.Ins.PlayGame();
         Application.LoadLevel("Scene3");
+    }
+
+    public void Setting()
+    {
+        UIManager.Ins.setting.Show(true);
+    }
+    public void X()
+    {
+        UIManager.Ins.setting.Show(false);
     }
 }

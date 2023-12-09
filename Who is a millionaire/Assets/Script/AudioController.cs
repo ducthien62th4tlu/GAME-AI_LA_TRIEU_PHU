@@ -1,24 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
+using UnityEngine.UI;
 
 public class AudioController : MonoBehaviour
 {
     public static AudioController Ins;
 
-    [Range(0,1)]
+    [Range(0, 1)]
     public float musicVolume;
-    [Range(0,1)]
+    [Range(0, 1)]
     public float soundVolume;
+    [Header("-----------Audio Source----------")]
+    [SerializeField] AudioSource musicAus;
+    [SerializeField] AudioSource soundAus;
 
-    public AudioSource musicAus;
-    public AudioSource soundAus;
-
+    [Header("-----------Audio Clip-------------")]
     public AudioClip[] backgroundMusic;
     public AudioClip rightSound;
+    public AudioClip wrongSound;
     public AudioClip loseSound;
     public AudioClip winSound;
     public AudioClip playSound;
+
+    [SerializeField] private AudioMixer myMixer;
+    [SerializeField] private Slider musicSlider;
+    [SerializeField] private Slider SFXSlider;
 
     private void Awake()
     {
@@ -28,6 +36,15 @@ public class AudioController : MonoBehaviour
     public void Start()
     {
         PlayBackgroundMusic();
+        if (PlayerPrefs.HasKey("musicVolume"))
+        {
+            LoadVolume();
+        }
+        else
+        {
+            SetMusicVolume();
+            SetSFXVolume();
+        }
     }
     private void Update()
     {
@@ -36,6 +53,26 @@ public class AudioController : MonoBehaviour
             musicAus.volume = soundVolume;
             soundAus.volume = soundVolume;
         }
+    }
+
+    public void SetMusicVolume()
+    {
+        float volume = musicSlider.value;
+        myMixer.SetFloat("music", Mathf.Log10(volume)*20);
+        PlayerPrefs.SetFloat("musicVolume", volume);
+    }
+    public void SetSFXVolume()
+    {
+        float volume = musicSlider.value;
+        myMixer.SetFloat("SFX", Mathf.Log10(volume) * 20);
+        PlayerPrefs.SetFloat("SFXVolume", volume);
+    }
+    public void LoadVolume()
+    {
+        musicSlider.value = PlayerPrefs.GetFloat("musicVolume");
+        SFXSlider.value = PlayerPrefs.GetFloat("SFXVolume");
+        SetMusicVolume();
+        SetSFXVolume();
     }
     public void PlayBackgroundMusic()
     {
@@ -63,6 +100,10 @@ public class AudioController : MonoBehaviour
     public void PlayRightSound()
     {
         PlaySound(rightSound);
+    }
+    public void PlayWrongtSound()
+    {
+        PlaySound(wrongSound);
     }
     public void PlayWinSound()
     {
