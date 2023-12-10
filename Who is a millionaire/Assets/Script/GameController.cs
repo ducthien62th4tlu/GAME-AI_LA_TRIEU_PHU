@@ -1,17 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
+[System.Serializable]
 public class GameController : MonoBehaviour
 {
     public float timePerQuestion;
     float m_curTime;
     int m_rightCount;
 
-    public AnswerButton rightAnswerButton;
-    public AnswerButton wrongAnswerButton;
-    public AnswerButton defaulAnswerButton;
+    private AnswerButton rightAnswerButton;
+    private AnswerButton wrongAnswerButton;
+    private AnswerButton defaulAnswerButton;
+    private SuportButton use50Button;
+    private SuportButton useYKButton;
 
     private void Awake()
     {
@@ -30,29 +32,29 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void CreateQuestion()
     {
         QuestionData qs = QuestionManager.Ins.GetRandomQuestion();
-        
+
         if (qs != null)
         {
             UIManager.Ins.SetQuestionText(qs.question);
-            string[] wrongAnswer = new string[] { qs.answerA,qs.answerB,qs.answerC};
+            string[] wrongAnswer = new string[] { qs.answerA, qs.answerB, qs.answerC };
 
             UIManager.Ins.ShuffleAnswwer();
 
             var temp = UIManager.Ins.answerButtons;
 
-            if(temp != null && temp.Length > 0) 
+            if (temp != null && temp.Length > 0)
             {
                 int wrongAnswerCount = 0;
-                for(int i = 0; i < temp.Length; i++)
+                for (int i = 0; i < temp.Length; i++)
                 {
                     int answerId = i;
-                    if(string.Compare(temp[i].tag,"RightAnswer") == 0)
+                    if (string.Compare(temp[i].tag, "RightAnswer") == 0)
                     {
                         temp[i].SetAnswerText(qs.rightAnswer);
                         rightAnswerButton = temp[i];
@@ -110,10 +112,10 @@ public class GameController : MonoBehaviour
             AudioController.Ins.PlayLoseSound();
         }
     }
-        IEnumerator TimeCoutingDown()
+    IEnumerator TimeCoutingDown()
     {
         yield return new WaitForSeconds(1);
-        if(m_curTime > 0)
+        if (m_curTime > 0)
         {
             m_curTime--;
             StartCoroutine(TimeCoutingDown());
@@ -126,11 +128,21 @@ public class GameController : MonoBehaviour
             StopAllCoroutines();
             AudioController.Ins.PlayLoseSound();
         }
-        
     }
 
+    IEnumerator PlayGame()
+    {
+        yield return new WaitForSeconds(1);
+    }
+    public void Use50()
+    {
+        UIManager.Ins.Change50(use50Button);
+    }
 
-    
+    public void UseYK()
+    {
+        UIManager.Ins.ChangeYK(useYKButton);
+    }
     public void ExitGame()
     {
         Application.Quit();

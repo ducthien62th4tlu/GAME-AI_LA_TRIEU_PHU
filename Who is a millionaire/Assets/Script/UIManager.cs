@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 
 [System.Serializable]
-
 public class UIManager : MonoBehaviour
 {
     public static UIManager Ins;
@@ -14,18 +13,21 @@ public class UIManager : MonoBehaviour
     public Dialog dialog;
     public Dialog setting;
     public AnswerButton[] answerButtons;
+    public SuportButton[] spButton;
     public Sprite rightAnswer;
     public Sprite wrongAnswer;
     public Sprite defaulAnswer;
+    public Sprite use50;
+    public Sprite useYK;
 
     public void Awake()
     {
         MakeSingleton();
     }
-    
+
     public void SetTimeText(string content)
     {
-        if(timeText)
+        if (timeText)
             timeText.text = content;
     }
 
@@ -37,9 +39,9 @@ public class UIManager : MonoBehaviour
 
     public void ShuffleAnswwer()
     {
-        if(answerButtons != null && answerButtons.Length > 0)
+        if (answerButtons != null && answerButtons.Length > 0)
         {
-            for(int i = 0; i < answerButtons.Length; i++) 
+            for (int i = 0; i < answerButtons.Length; i++)
             {
                 if (answerButtons[i])
                 {
@@ -54,7 +56,6 @@ public class UIManager : MonoBehaviour
             }
         }
     }
-
     public void ChangeRightAnswer(AnswerButton answerButton)
     {
         answerButton.GetComponent<Image>().sprite = rightAnswer;
@@ -69,10 +70,17 @@ public class UIManager : MonoBehaviour
     {
         answerButton.GetComponent<Image>().sprite = defaulAnswer;
     }
-
+    public void Change50(SuportButton spButton)
+    {
+        spButton.GetComponent<Image>().sprite = use50;
+    }
+    public void ChangeYK(SuportButton spButton)
+    {
+        spButton.GetComponent<Image>().sprite = useYK;
+    }
     public void MakeSingleton()
     {
-        if ( Ins == null)
+        if (Ins == null)
         {
             Ins = this;
         }
