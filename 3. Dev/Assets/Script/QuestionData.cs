@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,5 +10,6 @@ public class QuestionData
     public string answerA;
     public string answerB;
     public string answerC;
+
 
 }

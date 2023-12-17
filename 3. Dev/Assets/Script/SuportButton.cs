@@ -5,5 +5,8 @@ using UnityEngine.UI;
 
 public class SuportButton : MonoBehaviour
 {
-    public Button btnComp;
+    public Button btnComp; 
 }
+
+
+

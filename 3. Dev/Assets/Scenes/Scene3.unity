@@ -668,6 +668,75 @@ MonoBehaviour:
     answerA: "L\xEA Th\u1ECB Mai"
     answerB: "L\xEA Th\u1ECB Xu\xE2n"
     answerC: "L\xEA Th\u1ECB Lan"
+  - question: "Tr\xE1i \u0110\u1EA5t c\xE1ch M\u1EB7t Tr\u1EDDi kho\u1EA3ng bao nhi\xEAu
+      d\u1EB7m?"
+    rightAnswer: "93 tri\u1EC7u"
+    answerA: "9.3 tri\u1EC7u"
+    answerB: "39 tri\u1EC7u"
+    answerC: "193 tri\u1EC7u"
+  - question: "\u0110i\u1EC1n t\u1EEB c\xF2n thi\u1EBFu v\xE0o c\xE2u th\xE0nh ng\u1EEF
+      sau: \"V\u1EAFng ch\u1EE7 nh\xE0, g\xE0...\""
+    rightAnswer: "V\u1ECDc ni\xEAu t\xF4m"
+    answerA: "M\u1ECDc \u0111u\xF4i t\xF4m"
+    answerB: "\u0102n tr\u1ED9m t\xF4m"
+    answerC: "\u0102n tr\u1ED9m t\xF4m"
+  - question: "Theo m\u1ED9t c\xE2u ca dao x\u01B0a th\xEC \"M\u1ED9t ch\u1EE5c qu\u1EA3
+      h\u1ED3ng nu\u1ED1t\u2026\" ai?"
+    rightAnswer: "L\xE3o t\xE1m m\u01B0\u01A1i"
+    answerA: "L\xE3o ch\xEDn m\u01B0\u01A1i"
+    answerB: "L\xE3o b\u1EA3y m\u01B0\u01A1i"
+    answerC: "L\xE3o s\xE1u m\u01B0\u01A1i"
+  - question: "Ch\xF9a M\u1ED9t C\u1ED9t, m\u1ED9t bi\u1EC3u t\u01B0\u1EE3ng c\u1EE7a
+      th\u1EE7 \u0111\xF4 H\xE0 N\u1ED9i c\xF3 m\u1ED9t phi\xEAn b\u1EA3n t\xE1i
+      hi\u1EC7n t\u1EA1i th\xE0nh ph\u1ED1 H\u1ED3 Ch\xED Minh, v\xE0 m\u1ED9t phi\xEAn
+      b\u1EA3n kh\xE1c n\u1EB1m \u1EDF \u0111\xE2u?"
+    rightAnswer: 'Nga '
+    answerA: "Trung Qu\u1ED1c"
+    answerB: "Ph\xE1p"
+    answerC: Cuba
+  - question: "Theo V\u0103n ph\xF2ng Tham kh\u1EA3o D\xE2n s\u1ED1, th\xEC t\u1ED5ng
+      s\u1ED1 ng\u01B0\u1EDDi t\u1EEBng s\u1ED1ng tr\xEAn Tr\xE1i \u0110\u1EA5t t\u1EEB
+      x\u01B0a \u0111\u1EBFn nay l\xE0 kho\u1EA3ng bao nhi\xEAu ng\u01B0\u1EDDi?"
+    rightAnswer: "100 t\u1EF7"
+    answerA: "50 t\u1EF7"
+    answerB: "1000 t\u1EF7"
+    answerC: "5000 t\u1EF7"
+  - question: "S\u1ED1 ti\u1EBFp theo c\u1EE7a d\xE3y s\u1ED1 19, 28, 37, 46,\u2026
+      l\xE0 s\u1ED1 n\xE0o?"
+    rightAnswer: 55
+    answerA: 49
+    answerB: 65
+    answerC: 58
+  - question: "\u0110i\u1EC1n t\u1EEB c\xF2n thi\u1EBFu v\xE0o ch\u1ED7 tr\u1ED1ng
+      trong c\xE2u: \u201C\u0110\u1EE5c n\u01B0\u1EDBc b\xE9o\u2026\u201D?"
+    rightAnswer: "C\xF2"
+    answerA: "V\u1EA1c"
+    answerB: "C\xE1"
+    answerC: "M\xE8o "
+  - question: "Kh\xF4ng c\xF3 lo\xE0i ch\xE8 n\xE0o?"
+    rightAnswer: "Ch\xE8 th\xF3c"
+    answerA: "Ch\xE8 s\u1EAFn"
+    answerB: "Ch\xE8 ng\xF4"
+    answerC: "Ch\xE8 v\u1EEBng"
+  - question: "Nh\u1EA1c s\u0129 Ho\xE0ng Hi\u1EC7p \u0111\xE3 t\u1EF1 s\xE1ng t\xE1c
+      c\u1EA3 ph\u1EA7n nh\u1EA1c v\xE0 ph\u1EA7n l\u1EDDi cho ca kh\xFAc n\xE0o?"
+    rightAnswer: "Nh\u1EDB v\u1EC1 H\xE0 N\u1ED9i"
+    answerA: "Ng\u1ECDn \u0111\xE8n \u0111\u1EE9ng g\xE1c"
+    answerB: "C\xF4 g\xE1i v\xF3t ch\xF4ng"
+    answerC: "M\xF9a chim \xE9n bay"
+  - question: "\u0110\u1ECBa danh n\xE0o sau \u0111\xE2y \u0111\u01B0\u1EE3c UNESCO
+      c\xF4ng nh\u1EADn l\xE0 di s\u1EA3n v\u0103n h\xF3a th\u1EBF gi\u1EDBi?"
+    rightAnswer: "L\xE0ng c\u1ED5 Ph\u01B0\u1EDBc T\xEDch"
+    answerA: "Ph\u1ED1 c\u1ED5 H\u1ED9i An"
+    answerB: "Ho\xE0ng th\xE0nh Th\u0103ng Long"
+    answerC: "Th\xE0nh nh\xE0 H\u1ED3"
+  - question: "Trong khu\xF4n vi\xEAn ng\xF4i ch\xF9a n\xE0o \u1EDF th\u1EE7 \u0111\xF4
+      H\xE0 N\u1ED9i c\xF3 t\xF2a B\u1EA3o th\xE1p l\u1EE5c \u0111\u1ED9 \u0111\xE0i
+      sen?"
+    rightAnswer: "Ch\xF9a Tr\u1EA5n Qu\u1ED1c"
+    answerA: "Ch\xF9a Ph\xFAc Kh\xE1nh"
+    answerB: "Ch\xF9a Qu\u1EA3n S\u1EE9"
+    answerC: "Ch\xF9a B\u1ED9c"
 --- !u!4 &333971811
 Transform:
   m_ObjectHideFlags: 0
@@ -2041,8 +2110,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 3584336578158362681, guid: ca7b8b31c7c7513469920ec4c40e6394, type: 2}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: efdc8acd1beb8ed469420bec14bcac52, type: 3}
+  m_Resource: {fileID: 8300000, guid: efdc8acd1beb8ed469420bec14bcac52, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
