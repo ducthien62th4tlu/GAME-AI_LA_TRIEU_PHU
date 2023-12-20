@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+
 public class AnswerButton : MonoBehaviour
 {
     public Text answerText;
@@ -9,7 +10,7 @@ public class AnswerButton : MonoBehaviour
 
     public void SetAnswerText(string content)
     {
-        if(answerText)
-           answerText.text = content;
+        if (answerText)
+            answerText.text = content;
     }
 }

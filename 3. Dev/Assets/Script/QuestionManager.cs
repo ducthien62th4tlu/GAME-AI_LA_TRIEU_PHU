@@ -13,15 +13,12 @@ public class QuestionManager : MonoBehaviour
     public void Awake()
     {
         m_questions = questions.ToList();
-
-        Debug.Log(GetRandomQuesstion().question);
-
         MakeSingleton();
     }
 
-    public QuestionData CuQuestion { get => m_curQuestion; set => m_curQuestion = value; }
+    public QuestionData CurQuestion { get => m_curQuestion; set => m_curQuestion = value; }
 
-    public QuestionData GetRandomQuesstion()
+    public QuestionData GetRandomQuestion()
     {
     
         if(m_questions != null && m_questions.Count > 0)
