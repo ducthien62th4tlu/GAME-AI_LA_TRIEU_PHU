@@ -12,8 +12,6 @@ public class GameController : MonoBehaviour
     private AnswerButton rightAnswerButton;
     private AnswerButton wrongAnswerButton;
     private AnswerButton defaulAnswerButton;
-    private SuportButton use50Button;
-    private SuportButton useYKButton;
 
     private void Awake()
     {
@@ -133,15 +131,6 @@ public class GameController : MonoBehaviour
     IEnumerator PlayGame()
     {
         yield return new WaitForSeconds(1);
-    }
-    public void Use50()
-    {
-        UIManager.Ins.Change50(use50Button);
-    }
-
-    public void UseYK()
-    {
-        UIManager.Ins.ChangeYK(useYKButton);
     }
     public void ExitGame()
     {

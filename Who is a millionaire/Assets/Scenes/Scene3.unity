@@ -572,7 +572,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 258917087}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4301b20fe3060cb46a8329f815e52c5d, type: 3}
   m_Name: 
@@ -1319,7 +1319,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 737807248}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4301b20fe3060cb46a8329f815e52c5d, type: 3}
   m_Name: 
@@ -1363,15 +1363,9 @@ MonoBehaviour:
   - {fileID: 1691498467}
   - {fileID: 399045186}
   - {fileID: 113714542}
-  spButton:
-  - {fileID: 737807253}
-  - {fileID: 258917092}
-  - {fileID: 1477044504}
   rightAnswer: {fileID: 2176508685651163143, guid: f4cb608ca084ad142aa0352dbc7bb48a, type: 3}
   wrongAnswer: {fileID: 2040580302380571504, guid: 5ecf936db1b320644a6bcef3dc9c9761, type: 3}
   defaulAnswer: {fileID: 8165533901655744949, guid: c0c06e18d9cc4e74295f3e29ddb5eaeb, type: 3}
-  use50: {fileID: -3065867904112560532, guid: 5a33802b197aba24fa54b5a932d8a84e, type: 3}
-  useYK: {fileID: 3439972575481422736, guid: 9890c1f78797c1d4f850abfbe13f6dd1, type: 3}
 --- !u!4 &837990476
 Transform:
   m_ObjectHideFlags: 0
@@ -2346,7 +2340,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -10, y: 0.099975586}
+  m_AnchoredPosition: {x: -10, y: 0.100097656}
   m_SizeDelta: {x: -50, y: -1827.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1405819233
@@ -2615,7 +2609,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1477044499}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4301b20fe3060cb46a8329f815e52c5d, type: 3}
   m_Name: 

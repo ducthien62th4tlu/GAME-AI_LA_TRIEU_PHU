@@ -13,12 +13,9 @@ public class UIManager : MonoBehaviour
     public Dialog dialog;
     public Dialog setting;
     public AnswerButton[] answerButtons;
-    public SuportButton[] spButton;
     public Sprite rightAnswer;
     public Sprite wrongAnswer;
     public Sprite defaulAnswer;
-    public Sprite use50;
-    public Sprite useYK;
 
     public void Awake()
     {
@@ -69,14 +66,6 @@ public class UIManager : MonoBehaviour
     public void ChangeDefaulAnswer(AnswerButton answerButton)
     {
         answerButton.GetComponent<Image>().sprite = defaulAnswer;
-    }
-    public void Change50(SuportButton spButton)
-    {
-        spButton.GetComponent<Image>().sprite = use50;
-    }
-    public void ChangeYK(SuportButton spButton)
-    {
-        spButton.GetComponent<Image>().sprite = useYK;
     }
     public void MakeSingleton()
     {
