@@ -76,7 +76,7 @@ public class UIManager : MonoBehaviour
     }
     public void ChangeYK(SuportButton spButton)
     {
-        spButton.GetComponent<Image>().sprite = useYK;
+        //spButton.GetComponent<Image>().sprite = useYK;
     }
     public void MakeSingleton()
     {

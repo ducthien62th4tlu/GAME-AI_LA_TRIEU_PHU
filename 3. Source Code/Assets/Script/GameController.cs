@@ -8,6 +8,7 @@ public class GameController : MonoBehaviour
     public float timePerQuestion;
     float m_curTime;
     int m_rightCount;
+    int count = 0;
 
     private AnswerButton rightAnswerButton;
     private AnswerButton wrongAnswerButton;
@@ -37,7 +38,10 @@ public class GameController : MonoBehaviour
 
     public void CreateQuestion()
     {
+                
         QuestionData qs = QuestionManager.Ins.GetRandomQuestion();
+        count++ ;
+        QuestionController.instance.getQuestionNumber(count);
 
         if (qs != null)
         {
@@ -48,6 +52,7 @@ public class GameController : MonoBehaviour
 
             var temp = UIManager.Ins.answerButtons;
             var temp1 = UIManager.Ins.spButton;
+            
 
 
             if (temp != null && temp.Length > 0)
@@ -69,6 +74,8 @@ public class GameController : MonoBehaviour
                         temp[i].SetAnswerText(wrongAnswer[wrongAnswerCount]);
                         wrongAnswerCount++;
                         temp[i].btnComp.interactable = true;
+                        Debug.Log(i);
+
                         if (wrongAnswerCount <= maxWrongAnswers)
                         {
                             int a = i;
@@ -113,16 +120,19 @@ public class GameController : MonoBehaviour
                 UIManager.Ins.ChangeDefaulAnswer(answerButton);
                 AudioController.Ins.PlayRightSound();
                 Debug.Log("Ban da tra loi dung");
+                
             }
         }
         else
         {
+
             yield return new WaitForSeconds(1);
             UIManager.Ins.ChaneWrongAnswer(answerButton);
             UIManager.Ins.dialog.SetDialogContent(" YOU LOSE !");
             UIManager.Ins.dialog.Show(true);
             AudioController.Ins.PlayWrongtSound();
             AudioController.Ins.PlayLoseSound();
+            count = 0;
         }
     }
     IEnumerator TimeCoutingDown()
@@ -194,10 +204,9 @@ public class GameController : MonoBehaviour
 
         var temp = UIManager.Ins.answerButtons;
         var temp1 = UIManager.Ins.spButton;
-        Debug.Log(a);
         temp[a].SetAnswerNullText();
-
         temp[a].btnComp.interactable = false;
         temp1[0].btnComp.interactable = false;
+
     }
 }
